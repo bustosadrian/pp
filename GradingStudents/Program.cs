@@ -6,6 +6,8 @@ namespace GradingStudents
     class Program
     {
         private const int FAILING_GRADE = 40;
+        private const int GRADE_INTERVAL = 5;
+        private const int GRADE_INTERVAL_BREAK = 3;
 
         static void Main(string[] args)
         {
@@ -39,19 +41,14 @@ namespace GradingStudents
         {
             int roundedGrade = grade;
 
-            int interval = 5 - grade % 5;
+            int interval = GRADE_INTERVAL - grade % GRADE_INTERVAL;
 
-            if(interval < 3)
+            if(interval < GRADE_INTERVAL_BREAK)
             {
                 roundedGrade = roundedGrade + interval;
             }
 
-            if(roundedGrade < FAILING_GRADE)
-            {
-                roundedGrade = grade;
-            }
-
-            return roundedGrade;
+            return roundedGrade < FAILING_GRADE ? grade : roundedGrade;
         }
     }
 }
