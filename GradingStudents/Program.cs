@@ -41,11 +41,11 @@ namespace GradingStudents
         {
             int roundedGrade = grade;
 
-            int interval = GRADE_INTERVAL - grade % GRADE_INTERVAL;
+            int interval_diff = GRADE_INTERVAL - grade % GRADE_INTERVAL;
 
-            if(interval < GRADE_INTERVAL_BREAK)
+            if(interval_diff < GRADE_INTERVAL_BREAK)
             {
-                roundedGrade = roundedGrade + interval;
+                roundedGrade = roundedGrade + interval_diff;
             }
 
             return roundedGrade < FAILING_GRADE ? grade : roundedGrade;
