@@ -1,6 +1,5 @@
 ﻿using Generix.Extensions;
 using System;
-using System.Collections.Generic;
 
 namespace Generix
 {
