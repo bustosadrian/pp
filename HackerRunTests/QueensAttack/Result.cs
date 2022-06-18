@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace QueensAttack
+namespace HackerRunTests.QueensAttack
 {
-    class Result
+    public class Result
     {
         private const int ROW = 0;
         private const int COLUMN = 1;

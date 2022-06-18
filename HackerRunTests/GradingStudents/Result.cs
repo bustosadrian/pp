@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
-namespace GradingStudents
+namespace HackerRunTests.GradingStudents
 {
-    class Result
+    internal class Result
     {
         private const int FAILING_GRADE = 40;
         private const int GRADE_INTERVAL = 5;
@@ -35,34 +36,6 @@ namespace GradingStudents
             }
 
             return roundedGrade < FAILING_GRADE ? grade : roundedGrade;
-        }
-
-    }
-
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            List<int> grades = new List<int> { 4, 73, 67, 38, 33 };
-
-            var result = Result.gradingStudents(grades);
-
-            Console.WriteLine("Grades");
-            Console.WriteLine("**************************");
-            foreach (int o in grades)
-            {
-                Console.WriteLine($"{o}");
-            }
-
-            Console.WriteLine();
-            Console.WriteLine("Result");
-            Console.WriteLine("**************************");
-            foreach (int o in result)
-            {
-                Console.WriteLine($"{o}");
-            }
-
-            Console.ReadLine();
         }
     }
 }

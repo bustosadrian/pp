@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Text;
 
-namespace SuperReducedString
+namespace HackerRunTests.SuperReducedString
 {
-    class Result
+    public class Result
     {
 
         /*

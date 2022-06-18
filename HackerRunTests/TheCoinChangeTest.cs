@@ -1,12 +1,10 @@
-﻿using FluentAssertions;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
-using TheCoinChange;
 
-namespace Tests
+namespace HackerRunTests
 {
-    public class TheCoinChangeTests
+    public class TheCoinChangeTest : BaseHackerRankTest
     {
 
         [Test]
@@ -24,15 +22,12 @@ namespace Tests
             ExpectedResult = 1, TestName = "Test case 8")]
         [TestCase("245 26", "16 30 9 17 40 13 42 5 25 49 7 23 1 44 4 11 33 12 27 2 38 24 28 32 14 50",
             ExpectedResult = 64027917156, TestName = "Test case 14")]
-        public long Test(string sHeader, string sCoins)
+        public long Test(string header, string coins)
         {
-            string[] splittedHeader = sHeader.Split(" ");
-            string[] splittedCoins = sCoins.Split(" ");
+            int n = Parse<int>(header, 0);
+            List<long> c = ParseAll<long>(coins).ToList();
 
-            int n = int.Parse(splittedHeader[0]);
-            List<long> c = splittedCoins.Select(x => long.Parse(x)).ToList();
-
-            return Result.getWays(n, c);
+            return TheCoinChange.Result.getWays(n, c);
         }
     }
 }

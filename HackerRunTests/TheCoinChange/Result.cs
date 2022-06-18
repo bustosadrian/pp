@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace TheCoinChange
+namespace HackerRunTests.TheCoinChange
 {
     public class Result
     {
