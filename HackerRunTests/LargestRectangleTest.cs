@@ -23,7 +23,7 @@ namespace HackerRunTests
             ExpectedResult = 38, TestName = "Test case Custom 3")]
         public long Test(params string[] input)
         {
-            List<int> heights = input[1].Split(" ").Select(x => int.Parse(x)).ToList();
+            List<int> heights = ParseAll<int>(input[1]).ToList();
 
             return LargestRectangle.Result.largestRectangle(heights);
         }
@@ -33,7 +33,7 @@ namespace HackerRunTests
         public long TestFileInput(string fileName)
         {
             string[] input = ReadFromFile(fileName);
-            List<int> heights = input[1].Split(" ").Select(x => int.Parse(x)).ToList();
+            List<int> heights = ParseAll<int>(input[1]).ToList();
 
             return LargestRectangle.Result.largestRectangle(heights);
         }

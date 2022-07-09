@@ -16,7 +16,7 @@ namespace HackerRunTests
             return ParseValue<T>(value);
         }
 
-        protected IEnumerable<T> ParseAll<T>(string text, params int[] values)
+        protected IEnumerable<T> ParseAll<T>(string text)
         {
             string[] ar = Split(text);
             T[] retval = (T[])Array.CreateInstance(typeof(T), ar.Length);
