@@ -47,5 +47,10 @@ namespace HackerRunTests
         {
             return text.Split(' ').Where(x => x.Length > 0).ToArray();
         }
+
+        protected string[] ReadFromFile(string fileName)
+        {
+            return System.IO.File.ReadAllLines(@$"{fileName}");
+        }
     }
 }
