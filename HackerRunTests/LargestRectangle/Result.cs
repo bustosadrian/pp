@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace HackerRunTests.LargestRectangle
 {
@@ -10,6 +8,8 @@ namespace HackerRunTests.LargestRectangle
         public static long largestRectangle(List<int> h)
         {
             long maxSurface = 0;
+
+            long maxRect = 0;
 
             Dictionary<long, Rectangle> rectangles = new Dictionary<long, Rectangle>();
             var ar = h.ToArray();
@@ -47,6 +47,7 @@ namespace HackerRunTests.LargestRectangle
                     maxSurface = CloseRectanglesAndCalculateMaxSurface(maxSurface, rectangles, rectanglesToClose, i);
                 }
                 previousHeight = height;
+                maxRect = rectangles.Count > maxRect ? rectangles.Count : maxRect;
             }
             maxSurface = CloseRectanglesAndCalculateMaxSurface(maxSurface, null, rectangles, ar.Length);
 

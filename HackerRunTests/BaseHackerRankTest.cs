@@ -1,9 +1,7 @@
-﻿using NUnit.Framework;
+﻿using FluentAssertions;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using FluentAssertions;
 
 namespace HackerRunTests
 {
