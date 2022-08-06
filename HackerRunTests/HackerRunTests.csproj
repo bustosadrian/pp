@@ -17,6 +17,9 @@
     <None Update="LargestRectangle\Inputs\Test case 6.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="PoisonousPlants\Inputs\Test case X.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
