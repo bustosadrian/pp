@@ -21,7 +21,11 @@ namespace HackerRunTests.JourneyToMoon
                     result += o.AstrounautsCount * country.NextCountry.AstrounautsCount;
                     country = country.NextCountry;
                 }
-                result += (int)Math.Pow(result, unassignedAstrounats);
+                result += o.AstrounautsCount * unassignedAstrounats;
+            }
+            if(unassignedAstrounats > 0)
+            {
+                result += (int)Math.Pow(unassignedAstrounats - 1, unassignedAstrounats);
             }
 
             return result;
@@ -114,13 +118,6 @@ namespace HackerRunTests.JourneyToMoon
             get;
             set;
         }
-            
-
-        public Country UnassignedCountry
-        {
-            get;
-            set;
-        }
 
         public IEnumerable<string> CountriesAsString
         {
@@ -131,7 +128,7 @@ namespace HackerRunTests.JourneyToMoon
                 foreach(var o in Countries)
                 {
                     StringBuilder sb = new StringBuilder();
-                    sb.Append($"{o.Id} - {o.Astronauts}");
+                    //sb.Append($"{o.Id} - {o.Astronauts}");
                     retval.Add(sb.ToString());
                 }
 
@@ -158,7 +155,6 @@ namespace HackerRunTests.JourneyToMoon
         public void AddAstrounaut(int id)
         {
             AstrounautsCount++;
-            Astronauts += $"[{id}]";
         }
 
         public int Id
